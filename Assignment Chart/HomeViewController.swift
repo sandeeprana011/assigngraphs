@@ -34,11 +34,20 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.delegate = self;
+
+
         self.setShadowToView(view: self.vPieChartRootView);
         // Do any additional setup after loading the view, typically from a nib.
         self.setUpPieChart();
         self.setUpLineChart();
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+
+        scrollView.contentSize.height = rootView.frame.height
+        scrollView.contentSize.width = rootView.frame.width
+        super.viewWillAppear(animated)
+
     }
 
     private func setUpLineChart() {
@@ -52,18 +61,6 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
         self.lineChart.add(series);
     }
 
-    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
-        let widthScale = size.width / rootView.bounds.width
-        let heightScale = size.height / rootView.bounds.height
-        let minScale = min(widthScale, heightScale)
-
-        scrollView.minimumZoomScale = minScale
-        scrollView.zoomScale = minScale
-    }
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        updateMinZoomScaleForSize(view.bounds.size)
-    }
     private func setUpPieChart() {
         self.pieChart.delegate = self;
         self.pieChart.dataSource = self;
@@ -81,10 +78,6 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
     func setShadowToView(view: UIView) {
         let shadowPath = UIBezierPath(rect: view.bounds)
         view.layer.masksToBounds = false
-    }
-
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return rootView;
     }
 }
 

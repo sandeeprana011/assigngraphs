@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Assignment_Chart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="867"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vde-QL-E7r">
-                                <rect key="frame" x="0.0" y="168" width="375" height="699"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Vde-QL-E7r">
+                                <rect key="frame" x="0.0" y="168" width="375" height="499"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmR-VX-KzU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="867"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="675" height="667"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yot-GJ-3yg">
                                                 <rect key="frame" x="33" y="337" width="236" height="211"/>
@@ -152,6 +152,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-ab-Sah">
+                                                <rect key="frame" x="345" y="82" width="309" height="466"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94884210820000003" green="0.95683556800000003" blue="0.96257096529999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
@@ -223,7 +228,7 @@
                             <constraint firstItem="Vde-QL-E7r" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="53W-bd-X78"/>
                             <constraint firstItem="KmR-VX-KzU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="ESS-2d-ivs"/>
                             <constraint firstItem="Bkt-hz-Spr" firstAttribute="top" secondItem="gVk-hZ-Dme" secondAttribute="bottom" id="acf-JM-FYM"/>
-                            <constraint firstItem="KmR-VX-KzU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cBV-x8-FW0"/>
+                            <constraint firstItem="KmR-VX-KzU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="300" id="cBV-x8-FW0"/>
                             <constraint firstItem="Vde-QL-E7r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cYE-9B-bAG"/>
                             <constraint firstItem="gVk-hZ-Dme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jcj-Gw-xwu"/>
                             <constraint firstItem="gVk-hZ-Dme" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qJ9-78-wey"/>
@@ -234,7 +239,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <size key="freeformSize" width="375" height="867"/>
                     <connections>
                         <outlet property="lAmountPieChart" destination="l3p-Cu-h4F" id="2wn-Wz-AEd"/>
                         <outlet property="lPercentPieChart" destination="kHl-XL-uXE" id="rWa-7f-on2"/>

@@ -4,14 +4,14 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PieCharts.xcscheme</key>
+		<key>Pods-Assignment Chart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-Assignment Chart.xcscheme</key>
+		<key>SwiftChart.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false />
