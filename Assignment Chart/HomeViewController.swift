@@ -9,7 +9,7 @@
 import UIKit
 import SwiftChart
 
-class HomeViewController: UIViewController ,UIScrollViewDelegate{
+class HomeViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var vPieChartRootView: UIView!;
     @IBOutlet weak var vPieChartInnerView: UIView!;
@@ -20,6 +20,9 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
 //pragma mark Line Chart
     @IBOutlet weak var lineChart: Chart!;
     @IBOutlet weak var viewChartBackGround: ChartFilled!;
+// TableView
+
+    @IBOutlet weak var tableView: UITableView!;
 
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -40,6 +43,12 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
         // Do any additional setup after loading the view, typically from a nib.
         self.setUpPieChart();
         self.setUpLineChart();
+        self.setUptableView();
+    }
+
+    private func setUptableView() {
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -55,8 +64,8 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
         self.lineChart.showYLabelsAndGrid = false;
         self.lineChart.tintColor = UIColor.yellow
         self.lineChart.delegate = self;
-        let series = ChartSeries([1,3,4,6,8,11,10,8,12,14,15,11,12,11,14,12,16,17,19,15,22])
-        series.color = #colorLiteral(red: 0.9851996303, green: 0.5940072536, blue: 0.595333755, alpha: 1)
+        let series = ChartSeries([1, 3, 4, 6, 8, 11, 10, 8, 12, 14, 15, 11, 12, 11, 14, 12, 16, 17, 19, 15, 22])
+        series.color = #colorLiteral(red:0.9851996303, green:0.5940072536, blue:0.595333755, alpha:1)
         series.area = false;
         self.lineChart.add(series);
     }
@@ -110,34 +119,46 @@ extension HomeViewController: ARPieChartDataSource, ARPieChartDelegate {
     func pieChart(pieChart: ARPieChart, itemDeselectedAtIndex index: Int) {
         print("itemdeseledtedataindex");
     }
-    
-    func showDialogWithValue(_ amount:String) {
+
+    func showDialogWithValue(_ amount: String) {
         let alertValue = UIAlertController(title: "Pie Chart", message: "You Selected Value \(amount)", preferredStyle: .actionSheet);
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (result : UIAlertAction) -> Void in
+            (result: UIAlertAction) -> Void in
         }
-        
+
         alertValue.addAction(okAction);
-        
+
         self.present(alertValue, animated: true, completion: nil);
     }
 
 }
 
-extension HomeViewController:ChartDelegate {
+extension HomeViewController: ChartDelegate {
     func didTouchChart(_ chart: Chart, indexes: [Int?], x: Float, left: CGFloat) {
-        chart.highlightLineColor = #colorLiteral(red: 0.9765608907, green: 0.9770647883, blue: 0.9759072661, alpha: 1);
+        chart.highlightLineColor = #colorLiteral(red:0.9765608907, green:0.9770647883, blue:0.9759072661, alpha:1);
         self.viewChartBackGround.fillTill(left);
         self.showDialogWithValue(x.rounded().description);
     }
-    
+
     func didEndTouchingChart(_ chart: Chart) {
 
     }
-    
+
     func didFinishTouchingChart(_ chart: Chart) {
         print(chart);
     }
 }
 
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5;
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Names.CELL)
+        cell?.textLabel?.text = "\(indexPath.row.description) Lorem Ipsum";
+        return cell!;
+    }
+}
 
