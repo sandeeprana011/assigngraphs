@@ -16,6 +16,7 @@
 		05A724481FB6CF4600F06574 /* ARPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A724471FB6CF4600F06574 /* ARPieChart.swift */; };
 		119E2B3FFBEFE6402C26713D /* Pods_Assignment_Chart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788460B4FB2F184A5919392E /* Pods_Assignment_Chart.framework */; };
 		4D7BC1B7061608926798E227 /* PiedataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BC299F4BDCED751102E42 /* PiedataModel.swift */; };
+		4D7BC67B3A8492425C6C313B /* ChartFilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BCD84FC096DDF98D7078F /* ChartFilled.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		05A724471FB6CF4600F06574 /* ARPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARPieChart.swift; sourceTree = "<group>"; };
 		1DE229B778E4FD0907CBE6D9 /* Pods-Assignment Chart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment Chart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart.release.xcconfig"; sourceTree = "<group>"; };
 		4D7BC299F4BDCED751102E42 /* PiedataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiedataModel.swift; sourceTree = "<group>"; };
+		4D7BCD84FC096DDF98D7078F /* ChartFilled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartFilled.swift; sourceTree = "<group>"; };
 		788460B4FB2F184A5919392E /* Pods_Assignment_Chart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_Chart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A9EA6247DD3F05572E81B5 /* Pods-Assignment Chart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment Chart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				05A7243D1FB6047C00F06574 /* Info.plist */,
 				05A724351FB6047C00F06574 /* Assignment_Chart.xcdatamodeld */,
 				4D7BC299F4BDCED751102E42 /* PiedataModel.swift */,
+				4D7BCD84FC096DDF98D7078F /* ChartFilled.swift */,
 			);
 			path = "Assignment Chart";
 			sourceTree = "<group>";
@@ -190,11 +193,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RKPieChart/RKPieChart.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RKPieChart.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -231,6 +234,7 @@
 				05A7242F1FB6047C00F06574 /* AppDelegate.swift in Sources */,
 				05A724481FB6CF4600F06574 /* ARPieChart.swift in Sources */,
 				4D7BC1B7061608926798E227 /* PiedataModel.swift in Sources */,
+				4D7BC67B3A8492425C6C313B /* ChartFilled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

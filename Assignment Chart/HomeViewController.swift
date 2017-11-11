@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftChart
 
 class HomeViewController: UIViewController ,UIScrollViewDelegate{
 
@@ -15,6 +16,11 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
     @IBOutlet weak var pieChart: ARPieChart!;
     @IBOutlet weak var lPercentPieChart: UILabel!;
     @IBOutlet weak var lAmountPieChart: UILabel!;
+
+//pragma mark Line Chart
+    @IBOutlet weak var lineChart: Chart!;
+    @IBOutlet weak var viewChartBackGround: ChartFilled!;
+
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -32,6 +38,18 @@ class HomeViewController: UIViewController ,UIScrollViewDelegate{
         self.setShadowToView(view: self.vPieChartRootView);
         // Do any additional setup after loading the view, typically from a nib.
         self.setUpPieChart();
+        self.setUpLineChart();
+    }
+
+    private func setUpLineChart() {
+        self.lineChart.showXLabelsAndGrid = false;
+        self.lineChart.showYLabelsAndGrid = false;
+        self.lineChart.tintColor = UIColor.yellow
+        self.lineChart.delegate = self;
+        let series = ChartSeries([1,3,4,6,8,11,10,8,12,14,15,11,12,11,14,12,16,17,19,15,22])
+        series.color = #colorLiteral(red: 0.9851996303, green: 0.5940072536, blue: 0.595333755, alpha: 1)
+        series.area = false;
+        self.lineChart.add(series);
     }
 
     fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
@@ -91,11 +109,41 @@ extension HomeViewController: ARPieChartDataSource, ARPieChartDelegate {
     func pieChart(pieChart: ARPieChart, itemSelectedAtIndex index: Int) {
         let percent: CGFloat = (self.arrOfPiCharts[index].value / pieChart.total) * 100;
         self.lPercentPieChart.text = "\((Int(percent)).description) %"
-        self.lAmountPieChart.text = "\(Int(self.arrOfPiCharts[index].value).description)";
+        let amount = "\(Int(self.arrOfPiCharts[index].value).description)";
+        self.lAmountPieChart.text = amount;
+        self.showDialogWithValue(amount);
     }
 
     func pieChart(pieChart: ARPieChart, itemDeselectedAtIndex index: Int) {
         print("itemdeseledtedataindex");
+    }
+    
+    func showDialogWithValue(_ amount:String) {
+        let alertValue = UIAlertController(title: "Pie Chart", message: "You Selected Value \(amount)", preferredStyle: .actionSheet);
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+        }
+        
+        alertValue.addAction(okAction);
+        
+        self.present(alertValue, animated: true, completion: nil);
+    }
+
+}
+
+extension HomeViewController:ChartDelegate {
+    func didTouchChart(_ chart: Chart, indexes: [Int?], x: Float, left: CGFloat) {
+        chart.highlightLineColor = #colorLiteral(red: 0.9765608907, green: 0.9770647883, blue: 0.9759072661, alpha: 1);
+        self.viewChartBackGround.fillTill(left);
+        self.showDialogWithValue(x.rounded().description);
+    }
+    
+    func didEndTouchingChart(_ chart: Chart) {
+
+    }
+    
+    func didFinishTouchingChart(_ chart: Chart) {
+        print(chart);
     }
 }
 
