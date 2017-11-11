@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		05A7242F1FB6047C00F06574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A7242E1FB6047C00F06574 /* AppDelegate.swift */; };
-		05A724311FB6047C00F06574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A724301FB6047C00F06574 /* ViewController.swift */; };
+		05A724311FB6047C00F06574 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A724301FB6047C00F06574 /* HomeViewController.swift */; };
 		05A724341FB6047C00F06574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A724321FB6047C00F06574 /* Main.storyboard */; };
 		05A724371FB6047C00F06574 /* Assignment_Chart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 05A724351FB6047C00F06574 /* Assignment_Chart.xcdatamodeld */; };
 		05A724391FB6047C00F06574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A724381FB6047C00F06574 /* Assets.xcassets */; };
 		05A7243C1FB6047C00F06574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A7243A1FB6047C00F06574 /* LaunchScreen.storyboard */; };
+		05A724481FB6CF4600F06574 /* ARPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A724471FB6CF4600F06574 /* ARPieChart.swift */; };
+		119E2B3FFBEFE6402C26713D /* Pods_Assignment_Chart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788460B4FB2F184A5919392E /* Pods_Assignment_Chart.framework */; };
+		4D7BC1B7061608926798E227 /* PiedataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7BC299F4BDCED751102E42 /* PiedataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05A7242B1FB6047C00F06574 /* Assignment Chart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Chart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A7242E1FB6047C00F06574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		05A724301FB6047C00F06574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		05A724301FB6047C00F06574 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05A724331FB6047C00F06574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05A724361FB6047C00F06574 /* Assignment_Chart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assignment_Chart.xcdatamodel; sourceTree = "<group>"; };
 		05A724381FB6047C00F06574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05A7243B1FB6047C00F06574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05A7243D1FB6047C00F06574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05A724471FB6CF4600F06574 /* ARPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARPieChart.swift; sourceTree = "<group>"; };
+		1DE229B778E4FD0907CBE6D9 /* Pods-Assignment Chart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment Chart.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart.release.xcconfig"; sourceTree = "<group>"; };
+		4D7BC299F4BDCED751102E42 /* PiedataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiedataModel.swift; sourceTree = "<group>"; };
+		788460B4FB2F184A5919392E /* Pods_Assignment_Chart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment_Chart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1A9EA6247DD3F05572E81B5 /* Pods-Assignment Chart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment Chart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119E2B3FFBEFE6402C26713D /* Pods_Assignment_Chart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				05A7242D1FB6047C00F06574 /* Assignment Chart */,
 				05A7242C1FB6047C00F06574 /* Products */,
+				25368F4F1464EFB5EFA598CD /* Pods */,
+				82617EAA518479D6D749F54D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +68,33 @@
 			isa = PBXGroup;
 			children = (
 				05A7242E1FB6047C00F06574 /* AppDelegate.swift */,
-				05A724301FB6047C00F06574 /* ViewController.swift */,
+				05A724471FB6CF4600F06574 /* ARPieChart.swift */,
+				05A724301FB6047C00F06574 /* HomeViewController.swift */,
 				05A724321FB6047C00F06574 /* Main.storyboard */,
 				05A724381FB6047C00F06574 /* Assets.xcassets */,
 				05A7243A1FB6047C00F06574 /* LaunchScreen.storyboard */,
 				05A7243D1FB6047C00F06574 /* Info.plist */,
 				05A724351FB6047C00F06574 /* Assignment_Chart.xcdatamodeld */,
+				4D7BC299F4BDCED751102E42 /* PiedataModel.swift */,
 			);
 			path = "Assignment Chart";
+			sourceTree = "<group>";
+		};
+		25368F4F1464EFB5EFA598CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1A9EA6247DD3F05572E81B5 /* Pods-Assignment Chart.debug.xcconfig */,
+				1DE229B778E4FD0907CBE6D9 /* Pods-Assignment Chart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		82617EAA518479D6D749F54D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				788460B4FB2F184A5919392E /* Pods_Assignment_Chart.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05A724401FB6047C00F06574 /* Build configuration list for PBXNativeTarget "Assignment Chart" */;
 			buildPhases = (
+				A313833098A17FF47FEA70DF /* [CP] Check Pods Manifest.lock */,
 				05A724271FB6047C00F06574 /* Sources */,
 				05A724281FB6047C00F06574 /* Frameworks */,
 				05A724291FB6047C00F06574 /* Resources */,
+				6BD9AE8D2B015E134F5F6F9B /* [CP] Embed Pods Frameworks */,
+				4758A387389D97984D6AC109 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,14 +167,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4758A387389D97984D6AC109 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BD9AE8D2B015E134F5F6F9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RKPieChart/RKPieChart.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RKPieChart.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assignment Chart/Pods-Assignment Chart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A313833098A17FF47FEA70DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Assignment Chart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05A724271FB6047C00F06574 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				05A724371FB6047C00F06574 /* Assignment_Chart.xcdatamodeld in Sources */,
-				05A724311FB6047C00F06574 /* ViewController.swift in Sources */,
+				05A724311FB6047C00F06574 /* HomeViewController.swift in Sources */,
 				05A7242F1FB6047C00F06574 /* AppDelegate.swift in Sources */,
+				05A724481FB6CF4600F06574 /* ARPieChart.swift in Sources */,
+				4D7BC1B7061608926798E227 /* PiedataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +365,7 @@
 		};
 		05A724411FB6047C00F06574 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1A9EA6247DD3F05572E81B5 /* Pods-Assignment Chart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -284,13 +374,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thedancho.Assignment-Chart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		05A724421FB6047C00F06574 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DE229B778E4FD0907CBE6D9 /* Pods-Assignment Chart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,7 +390,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thedancho.Assignment-Chart";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
